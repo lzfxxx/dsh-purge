@@ -2,6 +2,29 @@
 
 本仓库是 **[YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge)** 的**全量镜像（mirror）**，
 由 [@mmparko](https://github.com/mmparko) 在上游宣布删库前完整备份，用于存档与分发。
+当前 fork（[@lzfxxx](https://github.com/lzfxxx)）在此镜像基础上跟进新版 DSH 的兼容修复。
+
+---
+
+## 当前 fork 的维护说明 / Fork maintenance
+
+原项目已暂停维护，不跟进新版 dsh。本 fork 只做**宿主兼容修复**，不改变插件的
+定位、提示词思路或署名；原项目名称、代码与提示词的一切权利仍归原作者。
+
+已发布的兼容修复：
+
+- **1.1.72** — 适配 dsh `0.2.1-alpha.1+`。宿主不再注册 `cwd` 提示词变量，当前目录改由
+  working-directory 服务的必需 runtime context 提供；插件不再把 `{{cwd}}` 写回
+  `deployment:persona-suffix`。修复新会话首轮
+  `unknown prompt variable "{{cwd}}" in section "deployment:persona-suffix"`。
+  旧宿主仍注册 `cwd` 时保留原行为。
+
+安装地址（本 fork）：
+
+```sh
+dsh plugin --profile web add github:lzfxxx/dsh-purge
+dsh plugin --profile desktop add github:lzfxxx/dsh-purge
+```
 
 ---
 
