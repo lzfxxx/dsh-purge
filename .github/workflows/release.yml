@@ -30,7 +30,7 @@ jobs:
           node --input-type=module -e "import './lib/index.js'"
 
       - name: Prompt-variable compatibility
-        run: node scripts/test-cwd-compat.mjs
+        run: node scripts/check-cwd-compat.mjs
 
       - name: Publish GitHub Release
         env:

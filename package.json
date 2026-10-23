@@ -36,7 +36,7 @@
   "scripts": {
     "embed-prompt": "node scripts/embed-default-prompt.mjs",
     "build:client": "node scripts/build-client.mjs",
-    "test:cwd": "node scripts/test-cwd-compat.mjs"
+    "test:cwd": "node scripts/check-cwd-compat.mjs"
   },
   "license": "MIT",
   "keywords": [
