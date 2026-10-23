@@ -176,18 +176,18 @@ Harness 不只是把问题交给模型。它还会在运行时改提示词、审
 **Web（官方 `dsh web`）**
 
 ```sh
-dsh plugin --profile web add dsh-purge
+dsh plugin --profile web add github:lzfxxx/dsh-purge
 ```
 
 **桌面端（官方 EXE）**
 
 ```sh
-dsh plugin --profile desktop add dsh-purge
+dsh plugin --profile desktop add github:lzfxxx/dsh-purge
 ```
 
 当前目录已经是本仓库时，把包名换成 `add .`。`dsh` 不在 PATH 时走 [手动安装](#manual)。registry 上不去：同一个 `--profile`，把目标换成 `https://github.com/lzfxxx/dsh-purge/archive/refs/heads/master.tar.gz`。
 
-[插件市场](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) 一键安装会按本仓库反查 npm，命中后装 `dsh-purge`。目录页可能仍写 `github:` —— 按钮若退回 git，用上表命令。
+npm 包名 `dsh-purge` 仍然指向上游那个停止维护的版本；要拿 DSH 0.2.1 修复请用上面的 `github:lzfxxx/dsh-purge` 命令。[插件市场](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) 一键安装装的是 npm 包，单点按钮拿不到这个 fork。
 
 桌面客户端也可以点按钮（`dsh://` 唤起）：
 
@@ -227,13 +227,13 @@ Web 的控件只动 Web，桌面端的只动桌面应用。不要在一个宿主
 **Web 端（官方 `dsh web`）**
 
 ```sh
-dsh plugin --profile web add dsh-purge
+dsh plugin --profile web add github:lzfxxx/dsh-purge
 ```
 
 **桌面端（官方 EXE）**
 
 ```sh
-dsh plugin --profile desktop add dsh-purge
+dsh plugin --profile desktop add github:lzfxxx/dsh-purge
 ```
 
 命令结束后，提醒用户：Web 完全退出并重启 `dsh web`；桌面端退出托盘再打开 EXE。各自点会话标题旁的 **dsh-purge**，在「清洗」里点「应用」。然后停止。
@@ -588,7 +588,7 @@ flowchart LR
 - 改动范围是本机 `@deepseek-ai/*` 包里的渲染文案、默认策略和执行逻辑，以及用户目录下的覆盖文件与规则集。
 - 升级后原文对不上会显示跳过，这次应用仍算完成，不会乱改。
 - 不改动非 `@deepseek-ai` 的第三方插件源仓库（启动时的 CMD 无感会**尽力**修补已装的 doctor / market / 梁神 / mnemon，属运行时补丁）。
-- 安装走 npm 包名 `dsh-purge`：`dsh plugin --profile web add dsh-purge` 或 `dsh plugin --profile desktop add dsh-purge`。当前目录已是本仓库时 `add .`。registry 上不去再加 master.tar.gz。插件市场一键安装走同一个 npm 包。
+- 安装这个 fork：`dsh plugin --profile web add github:lzfxxx/dsh-purge` 或 `dsh plugin --profile desktop add github:lzfxxx/dsh-purge`。当前目录已是本仓库时 `add .`。GitHub 上不去就换成 master.tar.gz。npm 包名仍指向上游。
 
 ---
 

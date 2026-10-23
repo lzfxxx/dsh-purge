@@ -176,18 +176,18 @@ Web and the official desktop EXE are the two maintained hosts. **Install both. A
 **Web (official `dsh web`)**
 
 ```sh
-dsh plugin --profile web add dsh-purge
+dsh plugin --profile web add github:lzfxxx/dsh-purge
 ```
 
 **Desktop (official EXE)**
 
 ```sh
-dsh plugin --profile desktop add dsh-purge
+dsh plugin --profile desktop add github:lzfxxx/dsh-purge
 ```
 
 If this directory is already a clone, use `add .` instead of the package name. If `dsh` is not on PATH, use [Manual install](#manual). Registry blocked: add `https://github.com/lzfxxx/dsh-purge/archive/refs/heads/master.tar.gz` with the same `--profile`.
 
-Hub one-click on [dsh-plugin.org](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) searches npm for this repository and installs `dsh-purge`. The catalog line may still show `github:` — use the command above if the button falls back to git.
+The bare npm name `dsh-purge` still resolves to the unmaintained upstream package; use the `github:lzfxxx/dsh-purge` commands above for the DSH 0.2.1 fix. The [dsh-plugin.org](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) hub entry installs the npm package, so the button alone will not pick this fork up.
 
 For the desktop client you can also click the button (`dsh://` deep link):
 
@@ -227,13 +227,13 @@ If `dsh` is not on PATH, tell the user and stop. If this directory is already a 
 **Web (official `dsh web`)**
 
 ```sh
-dsh plugin --profile web add dsh-purge
+dsh plugin --profile web add github:lzfxxx/dsh-purge
 ```
 
 **Desktop (official EXE)**
 
 ```sh
-dsh plugin --profile desktop add dsh-purge
+dsh plugin --profile desktop add github:lzfxxx/dsh-purge
 ```
 
 After the commands finish, tell the user to fully quit and restart `dsh web`, and to quit the desktop tray then reopen the EXE. On each host, open **dsh-purge** beside the session title and **Apply** on **Clean**. Then stop.
@@ -579,7 +579,7 @@ What changed, and the zip, are on [Releases](https://github.com/lzfxxx/dsh-purge
 - Scope is rendered copy, defaults, and runtime logic inside local `@deepseek-ai/*` packages, plus override files and rule sets under the harness home.
 - After an upgrade, unmatched originals show as skipped. Apply still completes, and those files are left unchanged.
 - Third-party plugin *source repos* outside `@deepseek-ai` are left alone (CMD silence may **best-effort** patch installed doctor / market / liangshen / mnemon at runtime).
-- Install the npm package `dsh-purge`: `dsh plugin --profile web add dsh-purge` or `dsh plugin --profile desktop add dsh-purge`. From this repo, `add .`. If the registry is blocked, add the master.tar.gz URL instead. Hub one-click uses the same npm package.
+- Install this fork: `dsh plugin --profile web add github:lzfxxx/dsh-purge` or `dsh plugin --profile desktop add github:lzfxxx/dsh-purge`. From this repo, `add .`. If GitHub is blocked, add the master.tar.gz URL instead. The bare npm package name still points at upstream.
 
 ---
 
