@@ -1,3 +1,21 @@
+# 1.1.72
+
+## 中文
+
+- 版本 **1.1.72**。
+- 适配 dsh **0.2.1-alpha.1+**：宿主不再注册 `cwd` 提示词变量，当前目录改由 working-directory 的必需 runtime context 提供。
+- 修复开启插件后新会话首轮报 `unknown prompt variable "{{cwd}}" in section "deployment:persona-suffix"`。
+- `cordis.patch.yml` 的 `personaSuffix` 默认清空；旧模板中的目录句不再补回，除非当前组装仍注册了 `cwd`。
+- 用户提示词里残留的 `{{cwd}}` 按未注册变量转义，避免渲染阶段整段失败。
+
+## English
+
+- **1.1.72**.
+- Support dsh **0.2.1-alpha.1+**: the host no longer registers the `cwd` prompt variable; the working directory comes from required runtime context.
+- Fix the first turn of a new session failing with `unknown prompt variable "{{cwd}}" in section "deployment:persona-suffix"`.
+- Default `personaSuffix` in `cordis.patch.yml` to empty; old directory clauses are no longer restored unless the current assembly still registers `cwd`.
+- Escape leftover `{{cwd}}` references in operator prompts as unregistered variables instead of failing the whole render.
+
 # 1.1.71
 
 ## 中文
